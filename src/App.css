@@ -1,12 +1,11 @@
 #root {
-  max-width: 1224px;
+  max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
 }
 
-
-.navbar{
-  display: flex;
-  justify-content: space-between;
+.task_card {
+  padding: 10px 20px;
+  border: 1px solid red;
 }
