@@ -5,7 +5,31 @@
   text-align: center;
 }
 
-.task_card {
+.board-holder {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.column {
+  margin: 20px 0px 0px 0px;
   padding: 10px 20px;
-  border: 1px solid red;
+  height: 100%;
+  width: 392px;
+  border-radius: 16px;
+}
+
+.column--todo {
+  background: pink;
+  transition: 30%;
+}
+
+.column--inprogress {
+  background: orange;
+  transition: 30%;
+}
+
+.column--done {
+  background: rgb(0, 255, 76);
+  transition: 30%;
 }

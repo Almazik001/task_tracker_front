@@ -10,7 +10,7 @@ const Board = () => {
     ]);
 
     return (
-        <div>
+        <div className='board-holder'>
             <Column tasks={tasks}  status='todo' title='To Do' />
             <Column tasks={tasks}  status='inprogress' title='In Progress'/>
             <Column tasks={tasks}  status='done' title='done'/>

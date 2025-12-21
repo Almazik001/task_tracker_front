@@ -6,12 +6,16 @@ const Column = ({title, tasks, status}) => {
 const filteredTasks = tasks.filter(task => task.status === status)
 
     return (
-        <div>
-            <h3>{title}</h3>
+        <div className={`column column--${status}`} >
 
-            {filteredTasks.map(task => (
-                <TaskCard key={task.id} task={task}  />
-            ))}
+            <div className="column-header">
+                <h3>{title}</h3>
+            </div>
+
+
+                {filteredTasks.map(task => (
+                    <TaskCard key={task.id} task={task}  />
+                ))}
         </div>
     );
 };
