@@ -8,7 +8,7 @@ const filteredTasks = tasks.filter(task => task.status === status)
     return (
         <>
        <div className="board-holder-line ">
-            <div className="column-header">
+            <div className={`column-header--${status}`}>
                 <h3>{title}</h3>
             </div>
 

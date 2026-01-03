@@ -11,14 +11,33 @@
   text-align: center;
 }
 
-.column-header--inprogress {
+.column-header--inprogress{
+  margin-top: 50px;
   height: 26px;
   width: 350px;
-  background: orange;
   padding: 20px;
   border-radius: 16px;
+  background-color: orange;
 }
 
+.column-header--todo{
+  margin-top: 50px;
+  height: 26px;
+  width: 350px;
+  padding: 20px;
+  border-radius: 16px;
+  background-color: pink;
+}
+
+
+.column-header--done{
+  margin-top: 50px;
+  height: 26px;
+  width: 350px;
+  padding: 20px;
+  border-radius: 16px;
+  background: rgb(0, 255, 76)
+}
 
 .board-holder {
   display: flex;
