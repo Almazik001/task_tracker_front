@@ -1,9 +1,24 @@
+* {
+  margin: 0px;
+  padding: 0px;
+
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
 }
+
+.column-header--inprogress {
+  height: 26px;
+  width: 350px;
+  background: orange;
+  padding: 20px;
+  border-radius: 16px;
+}
+
 
 .board-holder {
   display: flex;
@@ -15,7 +30,7 @@
   margin: 20px 0px 0px 0px;
   padding: 10px 20px;
   height: 100%;
-  width: 392px;
+  width: 350px;
   border-radius: 16px;
 }
 
