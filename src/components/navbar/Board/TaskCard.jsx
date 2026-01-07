@@ -1,11 +1,18 @@
 import React from 'react';
 
-const TaskCard = ({task}) => {
+const TaskCard = ({task, data}) => {
+
+
+
     return (
         <div className='task_card'>
             <h4>{task.title}</h4>
 
-            <p>ID: {task.id}</p>
+            <p>{task.body}</p>
+
+            <span>{data}</span>
+
+
         </div>
     );
 };
