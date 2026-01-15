@@ -1,20 +1,39 @@
 import React from 'react';
+import MyButton from '../UI/Mybutton/MyButton';
 
-const TaskCard = ({task, data}) => {
+const TaskCard = ({ task, changeStatus }) => {
 
+  
 
+  return (
+    <div className="task_card">
+      <h4>{task.title}</h4>
+      <p>{task.body}</p>
 
-    return (
-        <div className='task_card'>
-            <h4>{task.title}</h4>
+      {task.status === 'todo' && (
+        <MyButton onClick={() => changeStatus(task.id, 'progress')}>
+          В процесс
+        </MyButton>
+      )}
 
-            <p>{task.body}</p>
+      {task.status === 'progress' && (
+        <>
+          <MyButton onClick={() => changeStatus(task.id, 'todo')}>
+            Назад
+          </MyButton>
+          <MyButton onClick={() => changeStatus(task.id, 'done')}>
+            Готово
+          </MyButton>
+        </>
+      )}
 
-            <span>{data}</span>
-
-
-        </div>
-    );
+      {task.status === 'done' && (
+        <MyButton onClick={() => changeStatus(task.id, 'progress')}>
+          Вернуть
+        </MyButton>
+      )}
+    </div>
+  );
 };
 
 export default TaskCard;

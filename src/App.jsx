@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import Navbar from './components/navbar/navbar'
+import Navbar from './components/navbar/Navbar'
 import Board from './components/navbar/Board/Board'
 import Column from './components/navbar/Board/Column';
 import MyModal from './components/navbar/UI/MyModal/MyModal';
@@ -11,20 +11,19 @@ function App() {
 
   const [tasks, setTasks] = useState([]);
   const [modal, setModal] = useState(false);
-  const [todos, setTodos] = useState([])
 
   const createTask = (newTask) => {
-    setTasks([...tasks, newTask])
+    setTasks(prev => [...prev, newTask])
     setModal(false)
   }
 
     
     const changeStatus = (id, newStatus) => {
-      setTodos(
-        todos.map(todo => 
-          todo.id === id
-          ? {...todo, status: newStatus}
-          : todo
+      setTasks(
+        tasks.map(task => 
+          task.id === id
+          ? {...task, status: newStatus}
+          : task
         )
       )
     } 
@@ -37,7 +36,7 @@ function App() {
         <TaskForm 
         create={createTask} />
       </MyModal>
-      <Board todos={todos} changeStatus={changeStatus}  />
+      <Board tasks={tasks} changeStatus={changeStatus}  />
             
       {/* <MyButton onClick={() => changeStatus(todo.id, 'done')} >Готово</MyButton> */}
     </>

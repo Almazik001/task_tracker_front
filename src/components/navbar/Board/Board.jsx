@@ -1,16 +1,13 @@
-import React, { useState } from 'react';
-import Column from './Column'
-import { STATUSES } from '../../../utils/tegas';
+import Column from './Column';
 
-const Board = ({changeStatus, todos}) => {
-
-    return (
-        <div className='board-holder'>
-            <Column todos={todos} status={STATUSES.TODO} title='To Do' changeStatus={changeStatus}/>
-            <Column todos={todos} status={STATUSES.PROGRESS} title='In Progress' changeStatus={changeStatus}/>
-            <Column todos={todos} status={STATUSES.DONE} title='done' changeStatus={changeStatus}/>
-        </div>
-    );
+const Board = ({ tasks, changeStatus }) => {
+  return (
+    <div className="board">
+      <Column title="To Do" status="todo" tasks={tasks} changeStatus={changeStatus} />
+      <Column title="In Progress" status="progress" tasks={tasks} changeStatus={changeStatus} />
+      <Column title="Done" status="done" tasks={tasks} changeStatus={changeStatus} />
+    </div>
+  );
 };
 
 export default Board;
