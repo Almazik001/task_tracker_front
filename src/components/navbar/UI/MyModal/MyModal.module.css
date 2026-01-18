@@ -12,9 +12,7 @@
     background: white;
     border-radius: 10px;
     width: 50%;
-    color: black;
-    transition: 0.2 linear;
-    
+    color: black;    
 }
 
 .myModal.active {

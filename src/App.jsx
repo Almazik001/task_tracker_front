@@ -27,6 +27,11 @@ function App() {
         )
       )
     } 
+
+    const removeTask = (task) => {
+        setTasks([tasks.filter([p => p.id !== task.id])])
+    }
+
   
   
   return (
@@ -34,7 +39,7 @@ function App() {
       <Navbar setModal={setModal}/>
       <MyModal visible={modal} setVisible={setModal}>
         <TaskForm 
-        create={createTask} />
+        create={createTask} setModal={setModal}/>
       </MyModal>
       <Board tasks={tasks} changeStatus={changeStatus}  />
             

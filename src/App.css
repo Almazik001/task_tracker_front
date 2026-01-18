@@ -4,7 +4,9 @@
   margin: 0px;
   padding: 0px;
   @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+  
 }
+
 
 
 
@@ -46,6 +48,7 @@
 .board {
   display: flex;
   justify-content: space-between;
+  color: black;
 }
 
 .board-holder {
@@ -109,4 +112,9 @@
 .modalForm span{
   text-align: left;
   font-weight: 400;
+}
+
+.button_card {
+  display: flex;
+  justify-content: right;
 }

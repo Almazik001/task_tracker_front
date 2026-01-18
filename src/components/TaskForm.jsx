@@ -3,7 +3,7 @@ import MyButton from './navbar/UI/Mybutton/MyButton';
 import MyInput from './navbar/UI/MyInput/MyInput'
 import LogoTaks from '../assets/shape_logo.svg'
 
-const TaskForm = ({ create }) => {
+const TaskForm = ({ create, setModal }) => {
   
   const [task, setTask] = useState({title: '', body: ''});
 
@@ -16,13 +16,15 @@ const TaskForm = ({ create }) => {
     body: task.body,
     status: 'todo', 
    }
-  console.log('send' ,task)
-   create(newTask)
-    
-
+    create(newTask)
     setTask({ title: '', body: '' });
-    
   };
+
+
+  const cancel = () => {
+    setTask({title: '', body: ''})
+    setModal(false)
+  }
   
 
 
@@ -53,9 +55,15 @@ const TaskForm = ({ create }) => {
         onChange={e => setTask({...task, body: e.target.value })}
       />
 
-      <MyButton type="submit" >
-        Добавить
-      </MyButton>
+      <div className="form_button">
+        <MyButton type="button" onClick={cancel}>
+          Отменить
+        </MyButton>
+
+        <MyButton type="submit" >
+          Добавить
+        </MyButton>
+      </div>
 
       
     </form>

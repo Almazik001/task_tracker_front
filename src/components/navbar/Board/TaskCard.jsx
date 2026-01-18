@@ -7,11 +7,11 @@ const TaskCard = ({ task, changeStatus }) => {
 
   return (
     <div className="task_card">
-      <strong>{task.id}</strong>
       <h4>{task.title}</h4>
       <p>{task.body}</p>
 
-      {task.status === 'todo' && (
+      <div className="button_card">
+        {task.status === 'todo' && (
         <MyButton onClick={() => changeStatus(task.id, 'progress')}>
           В процесс
         </MyButton>
@@ -22,7 +22,8 @@ const TaskCard = ({ task, changeStatus }) => {
           <MyButton onClick={() => changeStatus(task.id, 'todo')}>
             Назад
           </MyButton>
-          <MyButton onClick={() => changeStatus(task.id, 'done')}>
+
+          <MyButton onClick={() => changeStatus(task.id, 'done')} >
             Готово
           </MyButton>
         </>
@@ -33,6 +34,7 @@ const TaskCard = ({ task, changeStatus }) => {
           Вернуть
         </MyButton>
       )}
+      </div>
     </div>
   );
 };
