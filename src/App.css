@@ -43,6 +43,11 @@
   background: rgb(0, 255, 76)
 }
 
+.board {
+  display: flex;
+  justify-content: space-between;
+}
+
 .board-holder {
   margin-top: 50px;  
   

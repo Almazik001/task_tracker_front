@@ -4,7 +4,8 @@ import MyInput from './navbar/UI/MyInput/MyInput'
 import LogoTaks from '../assets/shape_logo.svg'
 
 const TaskForm = ({ create }) => {
-  const [task, setTask] = useState();
+  
+  const [task, setTask] = useState({title: '', body: ''});
 
   const addTask = (e) => {
     e.preventDefault();
@@ -37,17 +38,19 @@ const TaskForm = ({ create }) => {
 
       <span>Task name</span>
       <MyInput
-        type='text'
         value={task.title}
+        type='text'
         placeholder="Название"
-        onChange={e => setTask({ ...task, title: e.target.value })}
+        onChange={ (e) => {
+          console.log("TITLE:", e.target.value)
+          setTask({...task, title: e.target.value})}}
       />
       <span>Taks discription</span>
       <MyInput
-        type='text'
         value={task.body}
+        type='text'
         placeholder="Описание"
-        onChange={e => setTask({ ...task, body: e.target.value })}
+        onChange={e => setTask({...task, body: e.target.value })}
       />
 
       <MyButton type="submit" >

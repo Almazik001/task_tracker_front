@@ -7,6 +7,7 @@ const TaskCard = ({ task, changeStatus }) => {
 
   return (
     <div className="task_card">
+      <strong>{task.id}</strong>
       <h4>{task.title}</h4>
       <p>{task.body}</p>
 
