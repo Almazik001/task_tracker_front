@@ -19,8 +19,8 @@ function App() {
 
     
     const changeStatus = (id, newStatus) => {
-      setTasks(
-        tasks.map(task => 
+      setTasks(prev =>
+        prev.map(task => 
           task.id === id
           ? {...task, status: newStatus}
           : task
@@ -28,8 +28,8 @@ function App() {
       )
     } 
 
-    const removeTask = (task) => {
-        setTasks([tasks.filter([p => p.id !== task.id])])
+    const removeTask = (id) => {
+        setTasks(prev => prev.filter(task => task.id !== id))
     }
 
   
@@ -41,7 +41,7 @@ function App() {
         <TaskForm 
         create={createTask} setModal={setModal}/>
       </MyModal>
-      <Board tasks={tasks} changeStatus={changeStatus}  />
+      <Board tasks={tasks} changeStatus={changeStatus}  removeTask={removeTask}/>
             
       {/* <MyButton onClick={() => changeStatus(todo.id, 'done')} >Готово</MyButton> */}
     </>

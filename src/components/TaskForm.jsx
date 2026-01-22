@@ -10,15 +10,14 @@ const TaskForm = ({ create, setModal }) => {
   const addTask = (e) => {
     e.preventDefault();
 
-   const newTask = {
-    ...task, id: Date.now(),
-    title: task.title,
-    body: task.body,
-    status: 'todo', 
-   }
+    const newTask = {
+      ...task, id: Date.now(),
+      status: 'todo',
+    }
+
     create(newTask)
-    setTask({ title: '', body: '' });
-  };
+    setTask({title: '', body: ''})
+  }
 
 
   const cancel = () => {
@@ -43,9 +42,7 @@ const TaskForm = ({ create, setModal }) => {
         value={task.title}
         type='text'
         placeholder="Название"
-        onChange={ (e) => {
-          console.log("TITLE:", e.target.value)
-          setTask({...task, title: e.target.value})}}
+        onChange={e => setTask({...task, title: e.target.value})}
       />
       <span>Taks discription</span>
       <MyInput
