@@ -1,14 +1,18 @@
 import React from 'react';
 import MyButton from '../UI/Mybutton/MyButton';
+import Xicon from '../../../assets/X SVG Icon.svg'
 
-const TaskCard = ({ task, changeStatus }) => {
+const TaskCard = ({ task, changeStatus, removeTask }) => {
 
   
 
   return (
     <div className="task_card">
-      <h4>{task.title}</h4>
-      <p>{task.body}</p>
+      <h4 className='task-title'>{task.title}</h4>
+      <p className='task-subtitle'>{task.body}</p>
+      <div className="task-delete">
+        <img src={Xicon} alt="delete"  onClick={() => removeTask(task.id)}/>
+      </div>
 
       <div className="button_card">
         {task.status === 'todo' && (
