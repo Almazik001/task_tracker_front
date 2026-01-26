@@ -1,6 +1,6 @@
 import React from 'react';
 import MyButton from '../UI/Mybutton/MyButton';
-import Xicon from '../../../assets/X SVG Icon.svg'
+import Xicon from '../../assets/X SVG Icon.svg'
 
 const TaskCard = ({ task, changeStatus, removeTask }) => {
 
@@ -15,7 +15,8 @@ const TaskCard = ({ task, changeStatus, removeTask }) => {
       </div>
 
       <div className="button_card">
-        {task.status === 'todo' && (
+      
+      {task.status === 'todo' && (
         <MyButton onClick={() => changeStatus(task.id, 'progress')}>
           В процесс
         </MyButton>
@@ -27,7 +28,7 @@ const TaskCard = ({ task, changeStatus, removeTask }) => {
             Назад
           </MyButton>
 
-          <MyButton onClick={() => changeStatus(task.id, 'done')} >
+          <MyButton onClick={() => changeStatus(task.id, 'done')}>
             Готово
           </MyButton>
         </>

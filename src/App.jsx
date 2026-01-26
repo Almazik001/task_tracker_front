@@ -1,9 +1,8 @@
 import { useState } from 'react'
 import Navbar from './components/navbar/Navbar'
-import Board from './components/navbar/Board/Board'
-import Column from './components/navbar/Board/Column';
-import MyModal from './components/navbar/UI/MyModal/MyModal';
-import TaskForm from './components/TaskForm';
+import Board from './components/board/Board'
+import MyModal from './components/UI/MyModal/MyModal';
+import TaskForm from './components/task/TaskForm';
 import './App.css'
 
 

@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import MyButton from './navbar/UI/Mybutton/MyButton';
-import MyInput from './navbar/UI/MyInput/MyInput'
-import LogoTaks from '../assets/shape_logo.svg'
+import MyButton from '../UI/Mybutton/MyButton.jsx'
+import MyInput from '../UI/MyInput/MyInput'
+import LogoTaks from '../../assets/shape_logo.svg'
 
 const TaskForm = ({ create, setModal }) => {
   

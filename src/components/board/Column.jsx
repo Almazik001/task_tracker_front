@@ -1,4 +1,4 @@
-import TaskCard from './TaskCard';
+import TaskCard from '../task/TaskCard';
 
 const Column = ({ title, status, tasks, changeStatus, removeTask }) => {
   return (
@@ -6,19 +6,17 @@ const Column = ({ title, status, tasks, changeStatus, removeTask }) => {
       <div className="column-title">
         <h3>{title}</h3>
       </div>
-      
-
-      {tasks
-        .filter(task => task.status === status)
-        .map(task => (
+        {tasks
+          .filter(task => task.status === status)
+          .map(task => (
             <TaskCard
               key={task.id}
               task={task}
-              changeStatus={changeStatus}
               removeTask={removeTask}
+              changeStatus={changeStatus}
             />
-        ))}
-    </div>
+          ))}
+      </div>
   );
 };
 
