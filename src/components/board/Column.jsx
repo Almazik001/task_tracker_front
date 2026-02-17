@@ -1,6 +1,11 @@
 import TaskCard from '../task/TaskCard';
 
 const Column = ({ title, status, tasks, changeStatus, removeTask }) => {
+
+
+
+
+
   return (
     <div className="column">
       <div className="column-title">

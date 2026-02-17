@@ -1,5 +1,5 @@
 import React from 'react';
-import MyButton from '../UI/Mybutton/MyButton';
+import MyButton from '../UI/MyButton/MyButton';
 import Xicon from '../../assets/X SVG Icon.svg'
 
 const TaskCard = ({ task, changeStatus, removeTask }) => {

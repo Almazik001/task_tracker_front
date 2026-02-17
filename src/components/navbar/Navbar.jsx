@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import LogoNavbar from '../../assets/logo_task_tracker.svg';
-import MyButton from '../UI/Mybutton/MyButton.jsx';
+import MyButton from '../UI/MyButton/MyButton.jsx';
 
 const Navbar = ({setModal}) => {
 
