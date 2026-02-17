@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import MyButton from '../UI/Mybutton/MyButton.jsx'
+import MyButton from '../UI/MyButton/MyButton.jsx'
 import MyInput from '../UI/MyInput/MyInput'
 import LogoTaks from '../../assets/shape_logo.svg'
 
@@ -7,16 +7,20 @@ const TaskForm = ({ create, setModal }) => {
   
   const [task, setTask] = useState({title: '', body: ''});
 
-  const addTask = (e) => {
+  const addTask = async (e) => {
     e.preventDefault();
 
     const newTask = {
-      ...task, id: Date.now(),
+      ...task, 
       status: 'todo',
     }
 
-    create(newTask)
-    setTask({title: '', body: ''})
+    try {
+      await create(newTask)
+      setTask({title: '', body: ''})
+    } catch (e) {
+      console.error('Не удалось создать задачу:', e)
+    }
   }
 
 
