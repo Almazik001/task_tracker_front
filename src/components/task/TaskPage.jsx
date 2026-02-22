@@ -3,7 +3,7 @@ import TaskForm from './TaskForm';
 import MyModal from '../UI/MyModal/MyModal';
 import Navbar from '../navbar/Navbar';
 import Board from '../board/Board';
-import * as api from '../../../services/api';
+import * as api from '../../services/api';
 
 const TaskPage = () => {
 

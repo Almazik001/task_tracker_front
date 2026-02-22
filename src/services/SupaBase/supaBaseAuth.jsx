@@ -32,7 +32,7 @@ export async function supaLogin(email, password) {
     const data = await res.json();
     localStorage.setItem('access_token', data.access.token)
     localStorage.setItem('refresh_token', data.refresh.token)
-    localStorage.setItem('user' , JSON.stringify(data.user))
+    localStorage.setItem('user', JSON.stringify(data.user))
     return data;
 }
 
@@ -48,5 +48,5 @@ export function getStoredUser() {
 }
 
 export function getToken() {
-    return нариlocalStorage.getItem('access_token')
+    return localStorage.getItem('access_token')
 }

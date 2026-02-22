@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import {supaSingUp} from '../../services/SupaBase/supaBaseAuth';
 import MyInput from '../UI/MyInput/MyInput';
 import MyButton from '../UI/MyButton/MyButton';
+import { useAuth } from '../context/AuthContext';
 
 const loginPage = () => {
 
+    const {login} = useAuth();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [password2, setPassword2] = useState("")
@@ -62,11 +64,15 @@ const loginPage = () => {
                 />
 
 
-                <MyButton>
+                <MyButton >
 
                     {loading ? "Создаем..." : "Зарегистрироватся"}
 
                 </MyButton>
+
+                <div>
+                    Есть аккаунт? <a href="/login">Войти</a>
+                </div>
             </form>
         </div>
     );
